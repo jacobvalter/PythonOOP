@@ -123,9 +123,13 @@ Dunder znamená double-under nebo-li metody se zvlášťním významem. Už jsme
 \_\_add\_\_
 
 ## Ověření typu objektu
+TDB
 
 ## Operátory
+TDB
 
 ## Dědičnost
+TDB
 
 ## Propojení s knihovnami
+TDB
