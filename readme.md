@@ -28,12 +28,12 @@ V Pythonu objekty využíváme i když to možná netušíme - string, int, list
 
 V OOP je základním pojmem třída (class), někdy se jí také říká typ (type). Třída je něco jako předpis (návrh, vzor, mustr), který říká jak daný objekt vypadá - jaké má atributy (proměnné - data) a jaké má metody (chování). Díky tomu že známe jak je třída definována, máme jistotu, že každý objekt vytvořený z dané třídy má dané atributy a metody - tato skutečnost se nám bude velmi hodit. Třída nám vlastně seskupuje určité proměnné a určité metody do logického celku, který (většinou) dává smysl.
 
-Třída je předpis pro objekt, objekt je třída naplněná daty nebo-li instance třídy či instanciovaná třída.
+Třída je předpis pro objekt a udává strukturu daného objektu (jeho atributy-data a metody). Objekt je třída naplněná daty (její atributy jako např. název, jméno výrobce, atd. mají už konkrétní hodnotu). Někdy je objekt nazýván instance třídy či instanciovaná třída.
 
 ## Modelování tříd
-Teď, když už víme co jsou to základní pojmy, pojďme si namodelovat třídy pro naší aplikaci. Ze zadání můžeme vyčíst, že se bavíme o věcech jako je senzor nebo zařízení. To jsou věci - objekty ze skutečného života, které si můžeme snadno představit. Co by tak asi mohl umět senzor v podání naší BI aplikace? Tak určitě by měl mít proměnné jako např. název, dál by mohl obsahovat proměnou pro uchování jednotek, ve které jsou data uložena a rozhodně musí mít proměnnou ve které budou uložena samotná data. Dále se nám u senzoru také bude hodit určité chování - funkce které provedou operace jako "načti data", "vykresli graf", nebo něco jako "spočítej zajímavá čísla" (nebo-li agregáty).
+Teď, když už víme co jsou to základní pojmy, pojďme si namodelovat třídy pro naší aplikaci. Ze zadání můžeme vyčíst, že se bavíme o věcech jako je senzor nebo zařízení. To jsou věci - objekty ze skutečného života, které si můžeme snadno představit. Co by tak asi mohl umět a mohl uchovávat senzor v podání naší BI aplikace? Tak určitě by měl mít proměnné jako např. název, dál by mohl obsahovat proměnou pro uchování jednotek, ve které jsou data uložena a rozhodně musí mít proměnnou ve které budou uložena samotná data. Dále se nám u senzoru také bude hodit určité chování - funkce které provedou operace jako "načti data", "vykresli graf", nebo něco jako "spočítej zajímavá čísla" (nebo-li agregáty).
 
-Třída pro zařízení by mohla vypadat např. tak, že má proměnnou název a dále pak bude obsahovat všechny přiřazené senzory. Z chování bude mít operace jako "přidej senzor" a "vykresli všechna data". 
+Třída pro zařízení by mohla vypadat např. tak, že má proměnnou jméno, název výrobce a dále pak bude obsahovat všechny přiřazené senzory (např. teplotní a tlakové). Z chování bude mít operace jako "přidej senzor" a "vykresli všechna data". 
 
 ## Definice třídy
 Vlastní třídu v Pythonu nadefinujeme velmi snadno:
@@ -83,7 +83,7 @@ class Sensor:
 ```
 
 ## Konstruktor nebo-li \_\_init\_\_
-Často se stane, že některá data v našem objektu (instanci třídy) nesmí chybět - jako např. název zařízení nebo senzoru. Jednoduše chceme, aby určitá data objektu musela být zadána při vytváření objektu. Toho se dá docílit speciální metodou, tzv. konstrukorem. Tato metoda se zavolá vždy, když se vytváří nová instance objektu. V našem případě chceme zajistit aby každý senzor nebo zařízení mělo vždy nějaké jméno a nebylo jen "undefined". V Pythonu se konstruktor definuje pomocí tzv. "magic" nebo také "dunder" metodou __init__:
+Často se stane, že některá data v našem objektu (v instanci třídy) nesmí chybět - jako např. název zařízení nebo senzoru. Jednoduše chceme, aby určitá data objektu musela být zadána při vytváření objektu. Toho se dá docílit speciální metodou, tzv. konstrukorem. Tato metoda se zavolá vždy, když se vytváří nová instance objektu. Kromě toho, že si díky konstruktoru můžeme vynutit, aby byla při vytváření objektu zadána nějaká data, která jsou důležitá, lze konstruktor použít i pro provedeni nějakých operací či úkonů, které nám správně nastaví (nebo-li inicializují) nový objekt. V našem případě chceme zajistit aby každý senzor nebo zařízení mělo vždy nějaké jméno a nebylo jen "undefined". V Pythonu se konstruktor definuje pomocí tzv. "magic" nebo také "dunder" metodou __init__:
 
 ```python
 class Sensor:
