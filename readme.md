@@ -43,10 +43,10 @@ class Equipment:
     vendor = "undefined"
 
     def details(self):
-        print("name: {self.name} vendor: {self.vendor}")
+        print(f"name: {Equipment.name} vendor: {Equipment.vendor}")
 ```
 Za klíčovým slovem class je jméno třídy s dvojtečkou a po odsazení na novém řádku definujeme jeho atributy a metody. V příkladu výše vidíme, že máme 2 atributy - name a vendor které mají počáteční hodnotu undefined a dále je zde metoda details, která zobrazí jméno a výrobce.
-Třídy pojmenováváme s velkým počátečním písmenem, aby se nepletla s názvy proměnných, které běžně pojmenováváme s malým počátečním písmenem. K významu záhadného self se dostaneme níže.
+Třídy pojmenováváme s velkým počátečním písmenem, aby se nepletla s názvy proměnných, které běžně pojmenováváme s malým počátečním písmenem. K významu parametru self se dostaneme později.
 
 ## Použití tříd - vytvoření konkrétního objektu
 Třídu použijeme jednoduše:
@@ -65,8 +65,11 @@ name: Hot Oven vendor: United Oven Factories
 
 Jak vidíme z kódu výše tak pomomcí operátoru pro přiřazení vytvoříme novou instanci třídy (podobně jakobychom volali metodu tzn. včetně závorek) a přiřadíme ji dané proměnné. Následně na vytvořeném objektu můžeme přes tečku přistupovat k jejím atributům a nebo volat její metody. Všimněte si, že parametr který je v definici metody details pojmenován jako self při volání této metody nevyplňujeme.
 
-## Atributy (data)
+## Atributy - proměnné (data)
 Drtivá většina objektů uchovává data, stejně tak jako objekty v našem případě. Výhodou objektů je, že když si vytvořím více objektů jedné třídy tak data přiřazená atributu daného objektu neovlivní data v jiném objektu. To, jakým způsobem definujeme atributy třídy a jak s nimi pracujeme na konkrétním objektu jsme si ukázali výše. Pokud se pokusíme na objektu přistoupit k atributu, který nebyl ve třídě definován, dostaneme chybu.
+
+### Rozsah atributů - atributy třídy a atributy instance
+TDB
 
 ## Metody (chování) a parameter self
 Jak si můžete všimnou tak metoda visualize ve třídě Equipment má právě jeden parameter pojmenovaný self. self je speciální jméno pro parameter, díky kterému můžeme v těle definované metody přistupovat k atributům a metodám objektu se kterým se pracuje - odkazuje na objekt samotný. Všechny metody každé třídy jej musí obsahovat a to právě jako první parameter. Následně za ním mohou být parametry další, jako můžete vidět v následujícím příkladě třídy Sensor:
