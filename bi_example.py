@@ -62,7 +62,7 @@ class Sensor:
         self.data.plot(x = Sensor._timestamp_column_name, y = Sensor._value_column_name, linewidth=1)
         plt.xticks(rotation=20)
         plt.show()
-        pass
+        
     
     def show_statistics(self):
         print(self.data.describe(datetime_is_numeric=True, include='all'))
@@ -83,11 +83,7 @@ class AggregatedSensor(Sensor):
             return
         time_window_edges = []
         aggregate_data = []
-        """
-        aggregate_data = pd.DataFrame(columns=(Sensor._timestamp_column_name, Sensor._value_column_name)
-        aggregate_data.name = aggregate_name
-        aggregate_data.set_index(Sensor._timestamp_column_name)
-        """
+
         start_time = self.data[Sensor._timestamp_column_name].min()
         end_time = self.data[Sensor._timestamp_column_name].max()
         current_time = start_time

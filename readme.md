@@ -1,5 +1,7 @@
 # Objektově orientované programování v Pythonu - základy
 
+Autor: Jakub Lenk, Jana Koukalová
+
 Ještě než se pustíme do samotné teorie a praxe s OOP v Pythonu, hned na začátku si řekneme co je cílem naší nové aplikace, ve které budeme používat objekty. Volně také navážeme na zkušenosti z předchozích hodin, které však nejsou nutnou podmínkou.
 
 Chceme vytvořit jednoduchu BI (business intelligence) aplikaci, která bude umět:
